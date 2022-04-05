@@ -1,7 +1,6 @@
 <template>
-  <div class="sidebar">
-      <div class="ss">
- <div class="logo">
+  <nav class="sidebar">
+    <div class="logo">
       <img src="../assets/images/logo.png" />
     </div>
     <ul class="side-nav">
@@ -13,15 +12,13 @@
         <p class="side-nav_link">Elephant</p>
       </nuxt-link>
     </ul>
-      </div>
-  
-</div>
+  </nav>
 </template>
 
 <script>
 </script>
 
-<style>
+<style scoped>
 .logo img {
   width: 131px;
   margin: 20px 30px;
@@ -30,7 +27,7 @@
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: #f1f1f1;
+  background-color: #ddddff;
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -59,6 +56,18 @@ a.nuxt-link-exact-active {
   font-size: 18px;
   line-height: 23px;
   color: #fff !important;
+}
+.sidebar a:hover:not(.active) {
+  background: #5959a7;
+  color: #ffffff !important;
+}
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #30425a;
 }
 @media screen and (max-width: 700px) {
   .sidebar {

@@ -121,11 +121,12 @@ export default {
   /* width: 100%; */
   margin-left: 200px;
   padding: 1px 16px;
+  overflow: hidden;
 }
 .dashboard-view-container {
    background: #ffffff;
   box-shadow: 0px -7px 24px rgba(0, 0, 0, 0.25);
-  padding: 30px 20px;
+  padding: 25px 20px;
   /* width: 80%; */
 }
 .dashboard-view p,

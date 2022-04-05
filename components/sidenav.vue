@@ -1,18 +1,4 @@
 <template>
-  <!-- <nav class="sidebar">
-    <div class="logo">
-      <img src="../assets/images/logo.png" />
-    </div>
-    <ul class="side-nav">
-      <nuxt-link to="/" class="side-nav_item">
-        <p class="side-nav_link">Home</p>
-      </nuxt-link>
-
-      <nuxt-link to="/allElephants/" class="side-nav_item elephant">
-        <p class="side-nav_link">Elephant</p>
-      </nuxt-link>
-    </ul>
-  </nav> -->
   <div class="sidebar">
       <div class="ss">
  <div class="logo">
@@ -32,20 +18,7 @@
 </div>
 </template>
 
-// //
 <script>
-// export default {
-//   async fetch() {
-//     this.posts = await fetch(
-//       'https://elephantapimary3.herokuapp.com/elephants'
-//     ).then((res) => res.json())
-//   },
-//   data() {
-//     return {
-//       posts: [],
-//     }
-//   },
-// }
 </script>
 
 <style>

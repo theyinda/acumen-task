@@ -29,7 +29,7 @@
               @click="$router.push('/allElephants/' + records._id)"
             >
               <td class="">{{ records.index }}</td>
-              <td class="">{{ records.name }}</td>
+              <td class="">{{ records.name}}</td>
               <td class="">{{ records.species }}</td>
               <td class="">{{ records.sex }}</td>
               <td class="">{{ records.affiliation }}</td>
@@ -77,32 +77,34 @@ export default {
       )
       const elephantsJson = promise.json()
       elephantsJson.then((res) => {
-        this.tableData = res.data
-        const Elephanntss = this.tableData
-        this.size = Elephanntss.length
+        // this.tableData = res.data 
+         console.log(page)
+         this.tableData = []
+         const Elephants = res.data
+        this.size = Elephants.length
         this.totalPages = Math.round(this.size / 8)
-
-         Elephanntss.forEach((elephant, index) => {
-          if (index >= page && index <= page + 9) {
+        Elephants.forEach((animal, index) => {
+          if (index >= page && index <= page + 7) {
             this.tableData.push({
+              _id: animal._id,
               index: index + 1,
-              name: elephant.name,
-              species: elephant.species,
-              sex: elephant.sex,
-              affiliation: elephant.affiliation,
-              dob: elephant.dob,
+              name: animal.name,
+              species: animal.species,
+              sex: animal.sex,
+              affiliation: animal.affiliation,
+              dob: animal.dob,
             })
           }
         })
       })
     },
     previous() {
-      const previousPage = (this.currentPage - 2) * 10
+      const previousPage = (this.currentPage - 2) * 8
       this.getElephants(previousPage)
       --this.currentPage
     },
     next() {
-      const nextpage = this.currentPage * 10
+      const nextpage = this.currentPage * 8
       this.getElephants(nextpage)
       ++this.currentPage
     },
@@ -229,7 +231,7 @@ button {
   color: #0546e0;
   border: 1px solid #0546e0;
 }
-.page-left {
+/* .page-left {
   background: #919eab;
   opacity: 0.5;
   border-radius: 4px;
@@ -241,8 +243,8 @@ button {
   font-weight: bold;
   font-size: 14px;
   line-height: 20px;
-}
-.page-right {
+} */
+.page-left,.page-right {
   background: #ffffff;
   border: 1px solid #dfe3e8;
   box-sizing: border-box;
@@ -256,8 +258,9 @@ button {
   line-height: 20px;
 }
 .pagination-controls button:disabled {
-  background-color: #919EAB;
-  opacity: 0.5;
+ background: #919EAB;
+opacity: 0.5;
+border-radius: 4px;
   cursor: not-allowed;
 }
 .active {

@@ -77,20 +77,20 @@ export default {
       )
       const elephantsJson = promise.json()
       elephantsJson.then((res) => {
-        // this.tableData = res.data
-        const Elephanntss = res.data
+        this.tableData = res.data
+        const Elephanntss = this.tableData
         this.size = Elephanntss.length
         this.totalPages = Math.round(this.size / 8)
 
-         Elephanntss.forEach((data, index) => {
+         Elephanntss.forEach((elephant, index) => {
           if (index >= page && index <= page + 9) {
             this.tableData.push({
               index: index + 1,
-              name: data.name,
-              species: data.species,
-              sex: data.sex,
-              affiliation: data.affiliation,
-              dob: data.dob,
+              name: elephant.name,
+              species: elephant.species,
+              sex: elephant.sex,
+              affiliation: elephant.affiliation,
+              dob: elephant.dob,
             })
           }
         })

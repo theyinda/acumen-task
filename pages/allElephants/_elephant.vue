@@ -9,8 +9,7 @@
       </div>
 
       <div class="elephant-div">
-         <!-- <img :src= "`${image }`" class="elephant-img"  /> -->
-        <img src="../../assets/images/elephant.png" class="elephant-img" />
+         <img :src= "`${image }`" class="elephant-img"  />
       </div>
 
       <div class="tuffi-text">
@@ -48,7 +47,7 @@ export default {
   methods: {
     async getElephantsbyId() {
       const baseUrl = 'http://acumen-elephantom.herokuapp.com/elephants/id/'
-      const elephantIdPromise = await fetch(baseUrl + this.$route.params._id)
+      const elephantIdPromise = await fetch(baseUrl + this.$route.params.elephant)
       const elephantsIdJson = elephantIdPromise.json()
       elephantsIdJson.then((response) => {
         if (!response.error) {

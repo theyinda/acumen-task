@@ -158,7 +158,7 @@ export default {
   width: 100%;
   margin: 10px auto;
   overflow-x:scroll;
-  overflow-y:scroll;
+  /* overflow-y:scroll; */
 }
 table {
   border-spacing: 0px;

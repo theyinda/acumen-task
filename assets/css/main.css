@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Overpass:wght@400;500;600&family=Poppins:wght@300;400;600&display=swap');
+
+* {
+ font-family: 'Overpass', sans-serif;
+  font-size: 16px;
+  /* line-height: 18px; */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border-style: none;
+  border: none;
+
+}
+
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+i,
+a,
+button {
+  cursor: pointer;
+}

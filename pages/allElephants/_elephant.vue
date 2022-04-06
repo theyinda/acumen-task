@@ -90,7 +90,7 @@ export default {
 }
 
 .elephant-div {
-  margin: 30px 0px;
+  margin: 40px;
   width: 80%;
 }
 .elephant-img {
@@ -153,6 +153,9 @@ export default {
   }
   .animal-header {
     width: 100%;
-  }
+  }.elephant-div {
+  margin: 40px auto;
+  width: 80%;
+}
 }
 </style>

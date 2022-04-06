@@ -9,7 +9,7 @@
       </div>
 
       <div class="elephant-div">
-         <img :src= "`${image }`" class="elephant-img"  />
+        <img :src="`${image}`" class="elephant-img" />
       </div>
 
       <div class="tuffi-text">
@@ -47,7 +47,9 @@ export default {
   methods: {
     async getElephantsbyId() {
       const baseUrl = 'http://acumen-elephantom.herokuapp.com/elephants/id/'
-      const elephantIdPromise = await fetch(baseUrl + this.$route.params.elephant)
+      const elephantIdPromise = await fetch(
+        baseUrl + this.$route.params.elephant
+      )
       const elephantsIdJson = elephantIdPromise.json()
       elephantsIdJson.then((response) => {
         if (!response.error) {
@@ -56,8 +58,7 @@ export default {
           this.sex = response.data.sex
           this.note = response.data.note
           console.log(this.$route)
-           console.log(response)
-
+          console.log(response)
         }
       })
     },
@@ -70,12 +71,12 @@ export default {
   width: 100%;
 }
 .content {
- /* width: 100%; */
+  /* width: 100%; */
   margin-left: 200px;
   padding: 1px 16px;
 }
 .dashboard-view-container {
-   background: #ffffff;
+  background: #ffffff;
   box-shadow: 0px -7px 24px rgba(0, 0, 0, 0.25);
   padding: 25px 20px;
 }
@@ -90,7 +91,7 @@ export default {
 
 .elephant-div {
   margin: 30px 0px;
- width: 80%;
+  width: 80%;
 }
 .elephant-img {
   background: linear-gradient(
@@ -127,31 +128,31 @@ export default {
 }
 @media screen and (max-width: 700px) {
   .content {
-  /* width: 100%; */
-  margin-left: 0;
-  padding: 1px 16px;
-}
-.dashboard-view-container {
-  padding: 20px 20px;
- margin-top: 40px;
-}
-.dashboard-view p,
-.title {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 23px;
-  color: #30425a;
-}
+    /* width: 100%; */
+    margin-left: 0;
+    padding: 1px 16px;
+  }
+  .dashboard-view-container {
+    padding: 20px 20px;
+    margin-top: 40px;
+  }
+  .dashboard-view p,
+  .title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #30425a;
+  }
 
-.animal-div {
-  margin: 30px 0;
-   background: #ffffff;
-  box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.25);
-  width: 100%;
-}
-.animal-header {
-  width: 100%;
-}
+  .animal-div {
+    margin: 30px 0;
+    background: #ffffff;
+    box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.25);
+    width: 100%;
+  }
+  .animal-header {
+    width: 100%;
+  }
 }
 </style>

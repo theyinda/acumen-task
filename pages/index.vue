@@ -29,7 +29,7 @@
               @click="$router.push('/allElephants/' + records._id)"
             >
               <td class="">{{ records.index }}</td>
-              <td class="">{{ records.name}}</td>
+              <td class="">{{ records.name }}</td>
               <td class="">{{ records.species }}</td>
               <td class="">{{ records.sex }}</td>
               <td class="">{{ records.affiliation }}</td>
@@ -41,10 +41,29 @@
               <p>PAGE {{ currentPage }} OF {{ totalPages }}</p>
             </div>
             <div class="pagination-controls">
-              <button class="page-left" :disabled="currentPage === 1" @click="previous">❮ &nbsp;</button>
+              <button
+                class="page-left"
+                :disabled="currentPage === 1"
+                @click="previous"
+              >
+                ❮ &nbsp;
+              </button>
               <button type="button" class="pageOne">{{ currentPage }}</button>
-              <button type="button" class="pageTwo" :disabled="currentPage === totalPages" @click="next"> {{ currentPage + 1 }}</button>
-              <button class="page-right" :disabled="currentPage === totalPages" @click="next">❯ &nbsp;</button>
+              <button
+                type="button"
+                class="pageTwo"
+                :disabled="currentPage === totalPages"
+                @click="next"
+              >
+                {{ currentPage + 1 }}
+              </button>
+              <button
+                class="page-right"
+                :disabled="currentPage === totalPages"
+                @click="next"
+              >
+                ❯ &nbsp;
+              </button>
             </div>
           </div>
         </div>
@@ -63,7 +82,6 @@ export default {
       currentPage: 1,
       totalPages: 0,
       size: 0,
-      
     }
   },
   created() {
@@ -77,10 +95,10 @@ export default {
       )
       const elephantsJson = promise.json()
       elephantsJson.then((res) => {
-        // this.tableData = res.data 
-         console.log(page)
-         this.tableData = []
-         const Elephants = res.data
+        // this.tableData = res.data
+        console.log(page)
+        this.tableData = []
+        const Elephants = res.data
         this.size = Elephants.length
         this.totalPages = Math.round(this.size / 8)
         Elephants.forEach((animal, index) => {
@@ -108,8 +126,7 @@ export default {
       this.getElephants(nextpage)
       ++this.currentPage
     },
-    
-  }
+  },
 }
 </script>
 
@@ -124,7 +141,7 @@ export default {
   overflow: hidden;
 }
 .dashboard-view-container {
-   background: #ffffff;
+  background: #ffffff;
   box-shadow: 0px -7px 24px rgba(0, 0, 0, 0.25);
   padding: 25px 20px;
   /* width: 80%; */
@@ -140,9 +157,17 @@ export default {
 
 .animal-div {
   margin: 30px 0;
-   background: #ffffff;
+  background: #ffffff;
   box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.25);
   width: 80%;
+}
+a.nuxt-link-exact-active {
+  background: #b9b9ff;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #fff !important;
 }
 .animal-header {
   width: 100%;
@@ -157,7 +182,7 @@ export default {
 .animal-table {
   width: 100%;
   margin: 10px auto;
-  overflow-x:scroll;
+  overflow-x: scroll;
   /* overflow-y:scroll; */
 }
 table {
@@ -178,22 +203,22 @@ td {
   width: 10%;
   text-align: left;
   font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 20px;
-cursor: pointer;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
 
-color: #848383;
+  color: #848383;
 }
 th {
   padding: 25px;
   text-align: left;
   font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 23px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
 
-color: #000000;
+  color: #000000;
 }
 .pagination-container {
   display: flex;
@@ -245,7 +270,8 @@ button {
   font-size: 14px;
   line-height: 20px;
 } */
-.page-left,.page-right {
+.page-left,
+.page-right {
   background: #ffffff;
   border: 1px solid #dfe3e8;
   box-sizing: border-box;
@@ -259,42 +285,42 @@ button {
   line-height: 20px;
 }
 .pagination-controls button:disabled {
- background: #919EAB;
-opacity: 0.5;
-border-radius: 4px;
+  background: #919eab;
+  opacity: 0.5;
+  border-radius: 4px;
   cursor: not-allowed;
 }
 .active {
-  border-color: #0546E0;
-  color: #0546E0;
+  border-color: #0546e0;
+  color: #0546e0;
 }
 @media screen and (max-width: 700px) {
   .dashboard-view {
-  /* width: 100%; */
-  margin-left: 0;
-  padding: 1px 16px;
-}
-.dashboard-view-container {
-  padding: 20px 20px;
- margin-top: 40px;
-}
-.dashboard-view p,
-.title {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 23px;
-  color: #30425a;
-}
+    /* width: 100%; */
+    margin-left: 0;
+    padding: 1px 16px;
+  }
+  .dashboard-view-container {
+    padding: 20px 20px;
+    margin-top: 40px;
+  }
+  .dashboard-view p,
+  .title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #30425a;
+  }
 
-.animal-div {
-  margin: 30px 0;
-   background: #ffffff;
-  box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.25);
-  width: 100%;
-}
-.animal-header {
-  width: 100%;
-}
+  .animal-div {
+    margin: 30px 0;
+    background: #ffffff;
+    box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.25);
+    width: 100%;
+  }
+  .animal-header {
+    width: 100%;
+  }
 }
 </style>

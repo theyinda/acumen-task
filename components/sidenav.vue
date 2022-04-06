@@ -8,15 +8,22 @@
         <p class="side-nav_link">Home</p>
       </nuxt-link>
 
-      <nuxt-link to="/allElephants/" class="side-nav_item elephant">
+      <nuxt-link
+        to="/allElephants/"
+        :class="[
+          'side-nav_item elephant',
+          $route.name.includes('allElephants-elephant')
+            ? 'nuxt-link-exact-active'
+            : '',
+        ]"
+      >
         <p class="side-nav_link">Elephant</p>
       </nuxt-link>
     </ul>
   </nav>
 </template>
 
-<script>
-</script>
+<script></script>
 
 <style scoped>
 .logo img {
@@ -32,7 +39,6 @@
   height: 100%;
   overflow: auto;
 }
-
 
 .side-nav {
   padding: 0;
@@ -75,10 +81,10 @@ a.nuxt-link-exact-active {
     height: auto;
     margin: 0 auto;
     position: relative;
-     float: center;
+    float: center;
   }
   .side-nav_item {
-      width: 100%;
+    width: 100%;
   }
 }
 
@@ -87,13 +93,13 @@ a.nuxt-link-exact-active {
     text-align: center;
     float: none;
   }
-  .logo{
-width: 100%;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
-  margin: 20px 0;
+  .logo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
   }
 }
 </style>

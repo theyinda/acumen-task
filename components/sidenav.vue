@@ -26,14 +26,21 @@
 <script></script>
 
 <style scoped>
+.logo{
+width: 100%;
+margin: 60px auto;
+}
 .logo img {
-  width: 131px;
-  margin: 20px 30px;
+  /* width: 50%; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
 .sidebar {
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 361px;
   background-color: #ddddff;
   position: fixed;
   height: 100%;
@@ -44,15 +51,14 @@
   padding: 0;
 }
 .side-nav_item {
-  margin: 20px 0 0 0px;
   width: 100%;
 }
 .side-nav_link {
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 18px;
-  line-height: 28px;
-  padding: 10px 0px 10px 26px;
+  line-height: 23px;
+  padding: 17px 0px 17px 66px;
   cursor: pointer;
 }
 a.nuxt-link-exact-active {
@@ -62,10 +68,6 @@ a.nuxt-link-exact-active {
   font-size: 18px;
   line-height: 23px;
   color: #fff !important;
-}
-.sidebar a:hover:not(.active) {
-  background: #5959a7;
-  color: #ffffff !important;
 }
 .sidebar a {
   display: block;

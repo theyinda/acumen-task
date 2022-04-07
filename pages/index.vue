@@ -1,11 +1,10 @@
 <template>
   <div class="container">
     <sidenav />
+    <div class="dashboard-view-container">
+      <p class="title">Acumen Digital Interview Task / Elephantom</p>
+    </div>
     <section class="dashboard-view">
-      <div class="dashboard-view-container">
-        <p class="title">Acumen Digital Interview Task / Elephantom</p>
-      </div>
-
       <div class="animal-div">
         <div class="animal-header">
           <h2>All Elephants</h2>
@@ -130,36 +129,43 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   width: 100%;
+   background: #f5f8ff;
+   overflow: hidden;
 }
 .dashboard-view {
   /* width: 100%; */
-  margin-left: 200px;
+  margin-left: 380px;
   padding: 1px 16px;
   overflow: hidden;
+ 
 }
 .dashboard-view-container {
   background: #ffffff;
   box-shadow: 0px -7px 24px rgba(0, 0, 0, 0.25);
   padding: 25px 20px;
-  /* width: 80%; */
+  padding: 34px 35px 31px;
+  width: 90%;
+  margin-left: 360px;
 }
 .dashboard-view p,
 .title {
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  line-height: 23px;
+  line-height: 28px;
   color: #30425a;
 }
 
 .animal-div {
   margin: 30px 0;
+  margin-top: 60px;
   background: #ffffff;
   box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.25);
   width: 80%;
+  overflow-x: hidden;
 }
 a.nuxt-link-exact-active {
   background: #b9b9ff;
@@ -173,17 +179,15 @@ a.nuxt-link-exact-active {
   width: 100%;
 }
 .animal-header h2 {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 23px;
   color: #30425a;
   padding: 20px 25px;
 }
 .animal-table {
   width: 100%;
   margin: 10px auto;
-  overflow-x: scroll;
-  /* overflow-y:scroll; */
 }
 table {
   border-spacing: 0px;
@@ -206,9 +210,8 @@ td {
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  cursor: pointer;
-
   color: #848383;
+  cursor: pointer;
 }
 th {
   padding: 25px;
@@ -257,19 +260,6 @@ button {
   color: #0546e0;
   border: 1px solid #0546e0;
 }
-/* .page-left {
-  background: #919eab;
-  opacity: 0.5;
-  border-radius: 4px;
-  color: #c4cdd5;
-  padding: 9.5px 13px;
-  border-style: none;
-  text-align: center;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 20px;
-} */
 .page-left,
 .page-right {
   background: #ffffff;
@@ -303,6 +293,8 @@ button {
   .dashboard-view-container {
     padding: 20px 20px;
     margin-top: 40px;
+    margin-left: 200px;
+    margin: 40px auto 0;
   }
   .dashboard-view p,
   .title {
@@ -321,6 +313,9 @@ button {
   }
   .animal-header {
     width: 100%;
+  }
+  .animal-table {
+    overflow-x: scroll;
   }
 }
 </style>

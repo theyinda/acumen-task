@@ -1,22 +1,21 @@
 <template>
   <div class="container">
     <sidenav />
+    <div class="dashboard-view-container">
+      <p class="title">Acumen Digital Interview Task / Elephantom > Elephant</p>
+    </div>
     <div class="content">
-      <div class="dashboard-view-container">
-        <p class="title">
-          Acumen Digital Interview Task / Elephantom > Elephant
-        </p>
-      </div>
-
       <div class="elephant-div">
         <img :src="`${image}`" class="elephant-img" />
       </div>
 
       <div class="tuffi-text">
-        <p>
-          <span class="tuffi-header">{{ name }}</span
-          >{{ sex }}
-        </p>
+        <div class="info">
+          <p>
+            <span class="tuffi-header">{{ name }}</span
+            >{{ sex }}
+          </p>
+        </div>
 
         <div>
           <p class="tuffi-paragraph">{{ note }}</p>
@@ -69,21 +68,26 @@ export default {
 <style scoped>
 .container {
   width: 100%;
+  overflow: hidden;
 }
 .content {
   /* width: 100%; */
-  margin-left: 200px;
+  margin-left: 380px;
   padding: 1px 16px;
+  overflow: hidden;
 }
 .dashboard-view-container {
   background: #ffffff;
   box-shadow: 0px -7px 24px rgba(0, 0, 0, 0.25);
   padding: 25px 20px;
+  padding: 34px 35px 31px;
+  width: 90%;
+  margin-left: 360px;
 }
 .dashboard-view p,
 .title {
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 18px;
   line-height: 28px;
   color: #30425a;
@@ -91,14 +95,23 @@ export default {
 
 .elephant-div {
   margin: 40px;
-  width: 80%;
+  width: 100%;
+  position: relative;
 }
-.elephant-img {
+.elephant-div::after {
+  position: absolute;
   background: linear-gradient(
     180deg,
-    rgba(196, 196, 196, 0) -1.55%,
-    rgba(29, 29, 242, 0.37) 77.84%
+    hsla(0, 0%, 76.9%, 0) -1.55%,
+    rgba(29, 29, 242, 0.36863) 77.84%
   );
+  bottom: 6px;
+  width: 90%;
+  content: '';
+  top: 0;
+  left: 0;
+}
+.elephant-img {
   width: 90%;
 }
 .tuffi-header {
@@ -107,7 +120,11 @@ export default {
   font-size: 48px;
   line-height: 74px;
   color: #30425a;
-  padding: 30px 10px 30px 40px;
+  padding: 30px 10px 30px 0px;
+}
+.info {
+  border-bottom: 1px solid rgba(196, 205, 213, 0.62);
+  width: 90%;
 }
 .tuffi-text {
   font-style: normal;
@@ -115,6 +132,8 @@ export default {
   font-size: 18px;
   line-height: 28px;
   color: #30425a;
+  margin: 40px;
+  width: 100%;
 }
 
 .tuffi-paragraph {
@@ -122,9 +141,9 @@ export default {
   font-weight: normal;
   font-size: 24px;
   line-height: 37px;
-  /* width: 934px; */
+  width: 90%;
   color: #30425a;
-  padding: 30px 40px;
+  padding: 30px 40px 30px 0;
 }
 @media screen and (max-width: 700px) {
   .content {
@@ -135,6 +154,8 @@ export default {
   .dashboard-view-container {
     padding: 20px 20px;
     margin-top: 40px;
+    margin-left: 200px;
+    margin: 40px auto 0;
   }
   .dashboard-view p,
   .title {
@@ -153,9 +174,10 @@ export default {
   }
   .animal-header {
     width: 100%;
-  }.elephant-div {
-  margin: 40px auto;
-  width: 80%;
-}
+  }
+  .elephant-div {
+    margin: 40px auto;
+    width: 80%;
+  }
 }
 </style>

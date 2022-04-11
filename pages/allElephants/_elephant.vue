@@ -106,13 +106,13 @@ export default {
     rgba(29, 29, 242, 0.36863) 77.84%
   );
   bottom: 6px;
-  width: 90%;
+  width: 70%;
   content: '';
   top: 0;
   left: 0;
 }
 .elephant-img {
-  width: 90%;
+  width: 70%;
 }
 .tuffi-header {
   font-style: normal;
@@ -124,7 +124,7 @@ export default {
 }
 .info {
   border-bottom: 1px solid rgba(196, 205, 213, 0.62);
-  width: 90%;
+  width: 70%;
 }
 .tuffi-text {
   font-style: normal;
@@ -141,9 +141,9 @@ export default {
   font-weight: normal;
   font-size: 24px;
   line-height: 37px;
-  width: 90%;
+  width: 70%;
   color: #30425a;
-  padding: 30px 40px 30px 0;
+  padding: 30px 0;
 }
 @media screen and (max-width: 700px) {
   .content {
@@ -179,5 +179,15 @@ export default {
     margin: 40px auto;
     width: 80%;
   }
+  .elephant-img {
+  /* width: 70%; */
+  width: 100%;
+}
+.elephant-div::after {
+  width: 100%;
+}
+.info {
+  width: 82%;
+}
 }
 </style>

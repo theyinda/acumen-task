@@ -103,5 +103,8 @@ a.nuxt-link-exact-active {
     justify-content: center;
     margin: 20px 0;
   }
+   .side-nav_link {
+  padding: 17px 0;
+}
 }
 </style>

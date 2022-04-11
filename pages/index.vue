@@ -165,7 +165,7 @@ export default {
   background: #ffffff;
   box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.25);
   width: 80%;
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 a.nuxt-link-exact-active {
   background: #b9b9ff;
@@ -202,6 +202,10 @@ table {
 tr:nth-of-type(even) {
   background-color: #f5f5f5;
 }
+tr:hover{
+  background: #ddddff;
+  cursor: pointer;
+}
 td {
   padding: 25px;
   width: 10%;
@@ -211,8 +215,9 @@ td {
   font-size: 16px;
   line-height: 20px;
   color: #848383;
-  cursor: pointer;
+  
 }
+
 th {
   padding: 25px;
   text-align: left;
